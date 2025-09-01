@@ -2,7 +2,7 @@
 
 <robot xmlns="https://github.com/jas-beep/Simple_DoublePendulum"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://drake.mit.edu ../../doc/drakeURDF.xsd" name="SimpleDoublePendulum">
+ xsi:schemaLocation="http://drake.mit.edu ../../doc/drakeURDF.xsd" name="Acrobot">
   <material name="black">
     <color rgba="0 0 0 1" />
   </material>
@@ -48,11 +48,6 @@
     <child link="shank" />
     <axis xyz="0 1 0" />
   </joint>
-  <transmission type="SimpleTransmission" name="ankle_trans">
-    <actuator name="ankle" />
-    <joint name="ankle" />
-    <mechanicalReduction>1</mechanicalReduction>
-  </transmission>
 
   <link name="thigh">
     <inertial> 
@@ -80,7 +75,6 @@
     <origin xyz="0 0 -1" />
     <child link="thigh" />
     <axis xyz="0 1 0" />
-    <limit lower="-1.57" upper="0.0" effort="30" velocity="0.0"/>
   </joint>
   <transmission type="SimpleTransmission" name="knee_trans">
     <actuator name="knee" />
